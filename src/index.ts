@@ -117,7 +117,7 @@ export default {
                 } catch (e) {
                     status.innerText = "保存失败";
                 }
-            }, 1000);
+            }, 500);
         }
 
         function copyText() {
@@ -131,6 +131,10 @@ export default {
 
         editor.addEventListener('input', saveContent);
         loadContent();
+
+        window.addEventListener('beforeunload', () => {
+            navigator.sendBeacon(\`/api/\${name}\`, editor.value);
+        });
         
         setInterval(async () => {
             if (document.activeElement !== editor) {
