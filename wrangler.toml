@@ -6,6 +6,6 @@ compatibility_date = "2024-03-09"
 binding = "COPY_KV"
 id = "62639355977e42e9871adae5c553749d"
 
-[route]
-pattern = "copy.io99.xyz/*"
+[[routes]]
+pattern = "copy.io99.xyz"
 custom_domain = true
